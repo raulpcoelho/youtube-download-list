@@ -1,4 +1,5 @@
 import yt_dlp
+from termcolor import colored
 
 def read_music_file(path):
     with open(path, "r") as file:
@@ -15,7 +16,12 @@ def main():
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        ydl.download(read_music_file("musicas.txt"))
+        songs = read_music_file("songs.txt")
+        for i, song in enumerate(songs):
+            print(colored(f"\n------------------------------------  Downloading song number {i+1}  -------------------------------------\n", "green"))
+            ydl.download(song)
+            print(colored("\n---------------------------------------------  Done  -------------------------------------------------\n", "green"))
 
 if __name__ == "__main__":
     main()
+
