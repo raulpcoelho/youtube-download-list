@@ -1,3 +1,5 @@
 songs.txt
 songs/
 venv/
+dist/
+build/
