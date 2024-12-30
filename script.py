@@ -12,7 +12,8 @@ def main():
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
                 'preferredquality': '192',
-            }],   
+        }],
+        'outtmpl': 'songs/%(title)s.%(ext)s',
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
